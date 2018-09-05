@@ -59,7 +59,11 @@ def print(students)
 end
 
 def print_footer(students)
-  string = "Overall, we have #{students.count} great students"
+  string = "Overall, we have #{students.count} great student"
+  if students.count != 1
+    string < "s"
+  end
+
   puts string
 end
 
