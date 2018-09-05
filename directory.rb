@@ -1,5 +1,5 @@
 def input_students
-  puts "Please enter the names and ages of the students like this: name,age"
+  puts "Please enter the names and ages of the students like this: name, age"
   puts "To finish, just hit return twice"
   # create an empty array
   students = []
@@ -7,7 +7,7 @@ def input_students
   name_and_age = gets.chomp
   # while the name is not empty, repeat this code
   while !name_and_age.empty? do
-    arr = name_and_age.split(",")
+    arr = name_and_age.split(", ")
     name, age = arr[0], arr[1]
     # add the student hash to the array
     students << {name: name, age: age, cohort: :november}
