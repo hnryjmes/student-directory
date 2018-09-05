@@ -1,19 +1,23 @@
 def input_students
-  puts "Please enter the names and ages of the students like this: name, age"
+  puts "Please enter the names, ages and cohorts of the students like this: name, age, cohort. To default to november cohort, you can leave it blank."
   puts "To finish, just hit return twice"
   # create an empty array
   students = []
   # get the first name
-  name_and_age = gets.chomp
+  input = gets.chomp
   # while the name is not empty, repeat this code
-  while !name_and_age.empty? do
-    arr = name_and_age.split(", ")
-    name, age = arr[0], arr[1]
+  while !input.empty? do
+    arr = input.split(", ")
+    puts arr[2]
+    if arr[2] == nil
+      arr.push("november")
+    end
+    name, age, cohort = arr[0], arr[1], arr[2].to_s
     # add the student hash to the array
-    students << {name: name, age: age, cohort: :november}
+    students << {name: name, age: age, cohort: cohort }
     puts "Now we have #{students.count} students"
     # get another name from the user
-    name_and_age = gets.chomp
+    input = gets.chomp
   end
   # return the array of students
   students
