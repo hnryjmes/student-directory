@@ -1,12 +1,12 @@
 def input_students
   puts "Please enter the names, ages and cohorts of the students like this: name, age, cohort. To default to november cohort, you can leave it blank."
   puts "To finish, just hit return twice"
-  # pre-populated data
+  # for pre-populated data just uncomment lines below, otherwise assume start with empty array
   students = [
-    {name: "Dr. Hannibal Lecter", age: 50, cohort: :november},
-    {name: "Darth Vader", age: 38, cohort: :november},
-    {name: "Nurse Ratched", age: 75, cohort: :september
-    },
+    # {name: "Dr. Hannibal Lecter", age: 50, cohort: :november},
+    # {name: "Darth Vader", age: 38, cohort: :november},
+    # {name: "Nurse Ratched", age: 75, cohort: :september
+    # },
   ]
   # get the first name
   input = gets.chomp
