@@ -9,7 +9,7 @@ def input_students
     },
   ]
   # get the first name
-  input = gets[0...-1]
+  input = gets.chomp
   # while the name is not empty, repeat this code
   while !input.empty? do
     arr = input.split(", ")
@@ -23,7 +23,7 @@ def input_students
     name, age: age, cohort: cohort }
     puts "Now we have #{students.count} students"
     # get another name from the user
-    input = gets[0...-1]
+    input = gets.chomp
   end
   # return the array of students
   students
@@ -60,8 +60,9 @@ end
 
 def print_footer(students)
   string = "Overall, we have #{students.count} great student"
+
   if students.count != 1
-    string < "s"
+    string += "s"
   end
 
   puts string
