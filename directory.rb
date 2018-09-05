@@ -69,6 +69,10 @@ def print_footer(students)
 end
 
 students = input_students
+while students.size == 0
+  puts "ERROR: List empty, please add a student"
+  students = input_students
+end
 #nothing happens until we call the methods
 print_header
 print(students)
