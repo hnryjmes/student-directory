@@ -12,6 +12,10 @@ students = []
     when "1"
       students = input_students
     when "2"
+      if students.size == 0
+        puts "ERROR: no students, please add a student"
+        next
+      end
       print_header
       print(students)
       print_footer(students)
