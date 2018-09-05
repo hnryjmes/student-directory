@@ -35,6 +35,11 @@ end
 
 
 students = input_students
+while students.size == 0
+  puts "ERROR: List empty, please add a student"
+  students = input_students
+end
+
 print_header
 print(students)
 print_footer(students)
