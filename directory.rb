@@ -3,7 +3,7 @@
 def print_menu
   puts "1. Input the students"
   puts "2. Show the students"
-  puts "3. Save the list to students.csv"
+  puts "3. Save the list to file"
   puts "4. Load the list from students.csv"
   puts "9. Exit" # 9 because we'll be adding more items
 end
@@ -74,8 +74,10 @@ def print_footer
 end
 
 def save_students
+  puts "Enter filename to save to"
+  filename = STDIN.gets.chomp
   # open the file for writing
-  file = File.open("students.csv", "w")
+  file = File.open(filename, "w")
   # iterate over the array of students
   @students.each do |student|
     student_data = [student[:name], student[:cohort]]
@@ -96,7 +98,6 @@ def load_students(filename = "students.csv")
     file.close
     puts "Loaded #{@students.count} from #{filename}"
   else # if it doesn't exist
-    puts "Sorry, #{filename} doesn't exist."
     return # return if doesn't exist
   end
 end
