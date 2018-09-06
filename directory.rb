@@ -89,13 +89,13 @@ def save_students
 end
 
 def load_students(filename = "students.csv")
-  if File.exists?(filename)
-    file = File.open(filename, "r")
-    file.readlines.each do |line|
-    name, cohort = line.chomp.split(',')
-    add_student_to_array(name, cohort)
+  if File.exist?(filename)
+    file = File.open(filename, "r") do |file|
+      file.readlines.each do |line|
+      name, cohort = line.chomp.split(',')
+      add_student_to_array(name, cohort)
+      end
     end
-    file.close
     puts "Loaded #{@students.count} from #{filename}"
   else # if it doesn't exist
     return # return if doesn't exist
