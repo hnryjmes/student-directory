@@ -92,19 +92,22 @@ def load_students(filename = "students.csv")
   add_student_to_array(name, cohort)
   end
   file.close
+  puts "Loaded #{@students.count} from #{filename}"
 end
 
-def try_load_students
+def try_load_default_file
   filename = "students.csv"
   if File.exists?(filename)
     load_students(filename)
-    puts "Loaded #{@students.count} from #{filename}"
   end
+end
+
+def try_load_students
+  try_load_default_file
   filename = ARGV.first# first argument from the command line
   return if filename.nil? # get out of the method if it isn't given
   if File.exists?(filename) # if it exists
     load_students(filename)
-    puts "Loaded #{@students.count} from #{filename}"
   else # if it doesn't exist
     puts "Sorry, #{filename} doesn't exist."
     exit # quit the program
